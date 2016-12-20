@@ -1,3 +1,0 @@
----
-serial_console_tasks: []
-serial_console_grub_mkconfig: /usr/sbin/grub2-mkconfig -o /boot/grub2/grub.cfg
