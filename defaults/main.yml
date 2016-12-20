@@ -1,0 +1,11 @@
+---
+# defaults file for serial-console
+
+serial_console_serial_unit: 0
+serial_console_serial_port: ttyS0
+serial_console_serial_speed: 115200
+serial_console_grub_terminal: "console serial"
+serial_console_inittab_runlevels: 23
+serial_console_upstart_start: 345
+serial_console_upstart_stop: S016
+

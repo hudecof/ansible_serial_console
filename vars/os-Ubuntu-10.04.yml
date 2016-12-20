@@ -1,0 +1,12 @@
+---
+
+serial_console_grub_mkconfig: /usr/sbin/update-grub
+serial_console_grub_defaults: "/etc/default/grub"
+
+# dirty hack, see https://bugs.launchpad.net/ubuntu/+source/grub2/+bug/490451
+serial_console_grub_terminal: "serial"
+
+serial_console_tasks:
+  - grub-v2.yml
+  - securetty.yml
+  - upstart.yml 

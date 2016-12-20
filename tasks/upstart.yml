@@ -1,0 +1,8 @@
+---
+- name: "serial-console | upstart"
+  template:
+     src: upstart-ttySX.j2
+     dest: /etc/init/{{ serial_console_serial_port }}.conf
+     owner: root
+     group: root
+     mode: 0644

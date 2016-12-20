@@ -1,0 +1,4 @@
+---
+
+serial_console_tasks:
+  - unsuported.yml

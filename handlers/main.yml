@@ -1,0 +1,8 @@
+---
+# handlers file for serial-console
+
+- name: grub-v2-update-config
+  command: "{{ serial_console_grub_mkconfig }}"
+
+- name: inittab-reload
+  command: /sbin/init q 

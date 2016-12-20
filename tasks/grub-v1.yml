@@ -1,0 +1,24 @@
+---
+
+- name: "serial-console | grub v1 serial line"
+  lineinfile:
+    dest="{{ serial_console_grub_conf }}"
+    regexp='^serial '
+    line='serial --unit=1 --speed={{ serial_console_serial_speed }} --word=8 --parity=no --stop=1'
+    insertafter='^default'
+  tags: serial_console
+
+- name: "serial-console | grub v1 terminal line"
+  lineinfile:
+    dest="{{ serial_console_grub_conf }}"
+    regexp='^terminal '
+    line='terminal --timeout=5 {{ serial_console_grub_terminal }}'
+    insertafter='^serial '
+  tags: serial_console
+
+- name: "serial-console | grub v1 hiddenmenu line"
+  lineinfile:
+    dest="{{ serial_console_grub_conf }}"
+    regexp='^hiddenmenu'
+    state=absent
+  tags: serial_console

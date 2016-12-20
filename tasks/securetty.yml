@@ -1,0 +1,8 @@
+---
+
+- name: "serial-console | securetty"
+  lineinfile:
+    dest="/etc/securetty"
+    regexp='^{{ serial_console_serial_port }}'
+    line='{{ serial_console_serial_port }}'
+  tags: serial_console

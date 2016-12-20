@@ -1,0 +1,12 @@
+---
+
+serial_console_grub_mkconfig: /usr/sbin/update-grub
+
+serial_console_grub_defaults: "/etc/default/grub"
+
+serial_console_inittab: /etc/inittab
+
+serial_console_tasks:
+  - grub-v2.yml
+  - inittab.yml
+  - securetty.yml

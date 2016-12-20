@@ -1,0 +1,28 @@
+---
+
+- name: "serial-console | grub v2 GRUB_CMDLINE_LINUX"
+  lineinfile:
+    dest="{{ serial_console_grub_defaults }}"
+    regexp='^GRUB_CMDLINE_LINUX_DEFAULT='
+    line='GRUB_CMDLINE_LINUX_DEFAULT="console=tty0 console={{ serial_console_serial_port }},{{ serial_console_serial_speed }}n8"'
+  notify:
+    - grub-v2-update-config
+  tags: serial_console
+
+- name: "serial-console | grub v2 GRUB_TERMINAL"
+  lineinfile:
+    dest="{{ serial_console_grub_defaults }}"
+    regexp='^GRUB_TERMINAL='
+    line='GRUB_TERMINAL="{{ serial_console_grub_terminal }}"'
+  notify:
+    - grub-v2-update-config
+  tags: serial_console
+
+- name: "serial-console | grub v2 GRUB_SERIAL_COMMAND"
+  lineinfile:
+    dest="{{ serial_console_grub_defaults }}"
+    regexp='^GRUB_SERIAL_COMMAND='
+    line='GRUB_SERIAL_COMMAND="serial --speed={{ serial_console_serial_speed }} --unit={{ serial_console_serial_unit }} --word=8 --parity=no --stop=1"'
+  notify:
+    - grub-v2-update-config
+  tags: serial_console

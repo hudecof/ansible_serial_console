@@ -1,0 +1,6 @@
+start on runlevel [{{ serial_console_upstart_start }}]
+stop on runlevel [{{ serial_console_upstart_stop }}]
+ 
+respawn
+instance /dev/{{ serial_console_serial_port }}
+exec /sbin/agetty {{ serial_console_serial_port }} {{ serial_console_serial_speed }} vt100-nav

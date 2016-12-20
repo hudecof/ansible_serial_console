@@ -1,0 +1,8 @@
+---
+
+serial_console_grub_conf: /etc/grub.conf
+
+serial_console_tasks:
+  - grubby.yml
+  - grub-v1.yml
+  - securetty.yml

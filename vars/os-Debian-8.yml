@@ -1,0 +1,9 @@
+---
+
+serial_console_grub_mkconfig: /usr/sbin/update-grub
+serial_console_grub_defaults: "/etc/default/grub"
+
+
+serial_console_tasks:
+  - grub-v2.yml
+  - securetty.yml

@@ -1,0 +1,10 @@
+---
+
+- name: "serial-console | inittab"
+  lineinfile:
+    dest="/etc/inittab"
+    regexp='^T0:'
+    line='T0:{{ serial_console_inittab_runlevels }}:respawn:/sbin/getty -L {{ serial_console_serial_port }} {{ serial_console_serial_speed }} vt100'
+  notify:
+    - inittab-reload
+  tags: serial_console

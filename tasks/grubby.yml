@@ -1,0 +1,11 @@
+---
+
+- name: "serial console | install grubby"
+  yum:
+    name: grubby
+    state: present
+
+- name: "serial console | grubby"
+  command:
+    grubby --remove-args="rhgb quiet" --args="console=tty0 console={{ serial_console_serial_port }},{{ serial_console_serial_speed }}n8" --update-kernel=ALL
+

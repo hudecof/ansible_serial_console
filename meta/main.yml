@@ -1,0 +1,27 @@
+galaxy_info:
+  author: Peter Hudec
+  description: serial console setup
+  company: CNC, a.s.
+
+  license: license BSD
+
+  min_ansible_version: 2.1
+
+  #github_branch:
+
+  platforms:
+  - name: Ubuntu
+    versions:
+    - lucid
+  - name: Debian
+    versions:
+    - squeeze
+    - stretch
+    - wheezy
+  - name: EL
+    versions:
+    - 6
+
+  galaxy_tags: ['serial', 'console']
+
+dependencies: []
